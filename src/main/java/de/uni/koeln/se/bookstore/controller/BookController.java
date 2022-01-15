@@ -53,4 +53,14 @@ public class BookController {
 			return new ResponseEntity<>(book, HttpStatus.BAD_REQUEST);
 		}
 	}
+	
+	@GetMapping("/oldest")
+	public ResponseEntity<Book> getOldestBook() {
+		return new ResponseEntity<>(bookSer.getOldestBook(), HttpStatus.OK);
+	}
+	
+	@GetMapping("/latest")
+	public ResponseEntity<Book> getLatestBook() {
+		return new ResponseEntity<>(bookSer.getLatestBook(), HttpStatus.OK);
+	}
 }

@@ -15,13 +15,15 @@ public class Book {
 	private String name;
 	private String author;
 	private Integer year;
+	private Double price;
 	
 	public Book() {}
 	
-	public Book(String name, String author, Integer year) {
+	public Book(String name, String author, Integer year, Double price) {
 		this.name = name;
 		this.author = author;
 		this.year = year;
+		this.price = price;
 	}
 
 	public Integer getId() {
@@ -55,6 +57,13 @@ public class Book {
 	public void setYear(Integer year) {
 		this.year = year;
 	}
-	
+
+	public Double getPrice() {
+		return price;
+	}
+
+	public void setPrice(Double price) {
+		this.price = price;
+	}
 	
 }

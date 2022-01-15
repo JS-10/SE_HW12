@@ -1,5 +1,6 @@
 package de.uni.koeln.se.bookstore.service;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -39,5 +40,32 @@ public class BookService {
 			status = false;
 		}
 		return status;
+	}
+	
+	// Exercise 2
+	// #5 Get oldest book
+	public Book getOldestBook() {
+		List<Book> books = new ArrayList<Book>();
+		books = findBooks();
+		Book oldestBook = books.get(0);
+		for(int i = 0; i < books.size(); i++) {
+			if(oldestBook.getYear() > books.get(i).getYear()) {
+				oldestBook = books.get(i);
+			}
+		}
+		return oldestBook;
+	}
+	
+	// #6 Get latest book
+	public Book getLatestBook() {
+		List<Book> books = new ArrayList<Book>();
+		books = findBooks();
+		Book latestBook = books.get(0);
+		for(int i = 0; i < books.size(); i++) {
+			if(latestBook.getYear() < books.get(i).getYear()) {
+				latestBook = books.get(i);
+			}
+		}
+		return latestBook;
 	}
 }
